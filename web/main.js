@@ -180,7 +180,7 @@ let timerId;          // ID интервала
 let secondsLeft; // Начальное время в секундах (можно изменить)
 let idBoxLeft;
 
-
+// TODO
 function updateDisplay(box_id) {
     const hours = Math.floor(secondsLeft / 3600).toString().padStart(2, '0');
     const mins = Math.floor((secondsLeft % 3600) / 60).toString().padStart(2, '0');
@@ -206,9 +206,6 @@ function updateDisplay(box_id) {
         clearInterval(idBoxLeft);
         display.remove();
         delete_item(box_id);
-        hh.textContent = "00";
-        mm.textContent = "00";
-        ss.textContent = "00";
         alert("Время вышло!");
     }
 }
@@ -221,7 +218,7 @@ function getTime(box_id) {
     idBoxLeft = box_id;
 }
 
-
+// TODO
 function startTimer(box_id) {
     if (timerId) return; // Уже запущен
 
@@ -241,6 +238,7 @@ function startTimer(box_id) {
     updateDisplay(box_id);
 }
 
+// TODO
 function pauseTimer(box_id) {
     const display = document.getElementById(box_id);
     const name = display.querySelector('.name').textContent.trim();
@@ -250,6 +248,7 @@ function pauseTimer(box_id) {
     timerId = null;
 }
 
+// TODO
 function resetTimer(box_id) {
     pauseTimer();
     getTime(box_id); // Сброс на начальное значение
